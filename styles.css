@@ -69,7 +69,7 @@ form input[type="submit"]:hover {
     margin: 0 auto;
 } 
 
-.task-container {
+li {
     background-color: var(--white);
     display: flex;
     justify-content: space-between;
