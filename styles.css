@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700;900&family=Pixelify+Sans&family=Roboto+Mono:wght@100;200;400;500;600&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -95,5 +95,11 @@ li {
     margin-top: 25px;
     font-size: 1.3em;
     color: var(--purple);
+    text-align: center;
+} 
+
+.my {
+    font-family: 'Roboto Mono', sans-serif;
+    margin-top: 150px;
     text-align: center;
 }

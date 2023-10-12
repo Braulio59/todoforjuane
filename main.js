@@ -14,8 +14,6 @@ const saveLocalStorage = tasksList => {
 const createTask = task =>
     `<li>${task.name}<img class='closeBtn' src='./assets/pngwing.com.png' data-id=${task.taskId} /</li>`
 
-
-
 // logica de renderizacion
 const renderTasksList = todoList => {
     tasksList.innerHTML = todoList.map(task => createTask(task)).join('');
@@ -39,7 +37,7 @@ const addTask = (event) => {
 
 
 
-    
+
     tasks = [... tasks, {name: taskName, taskId: tasks.length + 1}];
     input.value = '';
 
@@ -48,9 +46,19 @@ const addTask = (event) => {
 };
 
 
+const removeTask = e => {
+    if(!e.target.classList.contains('closeBtn')) return;
+    const filterId = Number(e.target.dataset.id);
+    tasks = tasks.filter(task => task.taskId !== filterId);
+    renderTasksList(tasks);
+    saveLocalStorage(tasks);
+
+};
+
 const init = () => {
     renderTasksList(tasks);
-    addform.addEventListener('submit', addTask )
+    addform.addEventListener('submit', addTask );
+    tasksList.addEventListener('click', removeTask)
 };
 
 init();
